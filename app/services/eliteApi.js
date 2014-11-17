@@ -55,7 +55,7 @@
                 console.log("Found data inside cache", leaguesData);
                 deferred.resolve(leaguesData);
             } else {
-                $http.get("http://elite-schedule.net/api/leaguedata")
+                $http.get("http://www.corsproxy.com/elite-schedule.net/api/leaguedata/")
                     .success(function(data) {
                         console.log("Received data via HTTP");
                         self.leaguesCache.put(cacheKey, data);
@@ -88,7 +88,7 @@
                     template: 'Loading...'
                 });
 
-                $http.get("http://elite-schedule.net/api/leaguedata/" + getLeagueId())
+                $http.get("http://www.corsproxy.com/elite-schedule.net/api/leaguedata/" + getLeagueId())
                     .success(function(data, status) {
                         console.log("Received schedule data via HTTP.", data, status);
                         self.leagueDataCache.put(cacheKey, data);
